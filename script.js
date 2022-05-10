@@ -72,7 +72,7 @@ window.onload = function() {
         setTimeout(() => {
             loader.style.display = 'none';
             button.style.display = 'flex';
-        }, 500);
+        }, 1000);
     }
 };
 
