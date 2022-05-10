@@ -22,10 +22,11 @@
     </div>
     <script type='text/javascript'>
         (() => {
+
             if (window.localStorage) {
                 if (!localStorage.getItem('reload')) {
                     localStorage['reload'] = true;
-                    window.location.reload();
+                    setTimeout(() => window.location.reload(), 1000);
                 } else {
                     localStorage.removeItem('reload');
                 }
