@@ -21,20 +21,16 @@
     </canvas>
     </div>
     <script type='text/javascript'>
-        (function()
-        {
-          if( window.localStorage )
-          {
-            if( !localStorage.getItem('firstLoad') )
-            {
-              localStorage['firstLoad'] = true;
-              window.location.reload();
-            }  
-            else
-              localStorage.removeItem('firstLoad');
-          }
-        })();
-        
+        (() => {
+            if (window.localStorage) {
+                if (!localStorage.getItem('reload')) {
+                    localStorage['reload'] = true;
+                    window.location.reload();
+                } else {
+                    localStorage.removeItem('reload');
+                }
+            }
+    })();
     </script>
     <script src="reimg.js"></script>
     <script src="script.js"></script> 
