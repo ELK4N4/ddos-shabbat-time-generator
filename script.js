@@ -1,4 +1,5 @@
 window.onload = function() {
+    
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     var img = new Image(); 
@@ -7,7 +8,7 @@ window.onload = function() {
         ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "white";
         ctx.font = "600 130px Assistant";
-
+        
         var response;
         var json;
         var geoJerusalem = 281184;
@@ -38,6 +39,15 @@ window.onload = function() {
         var parashaWidth = ctx.measureText(parashaString).width;
         ctx.fillText(parashaString , (canvas.width/2) - (parashaWidth / 2), 415);
 
+        if (window.localStorage) {
+            if (!localStorage.getItem('reload')) {
+                localStorage['reload'] = true;
+                setTimeout(() => window.location.reload(), 500);
+            } else {
+                localStorage.removeItem('reload');
+            }
+        }
+        
         ctx.font = "700 95px Assistant";
         var jerusalemString = `${jerusalemExist}             ${jerusalemEnter}`;
         var jerusalemWidth = ctx.measureText(jerusalemString).width;
