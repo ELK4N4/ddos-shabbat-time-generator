@@ -56,5 +56,14 @@ window.onload = function() {
         var haifaString = `${haifaExist}             ${haifaEnter}`;
         var haifaWidth = ctx.measureText(haifaString).width;
         ctx.fillText(haifaString , (canvas.width/2) - (haifaWidth / 2) - 230, 710 + 140*3);
+
+        var loader = document.getElementById("loader");
+        var button = document.getElementById("download");
+        loader.style.display = 'none';
+        button.style.display = 'flex';
     }
 };
+
+const download = () => {
+    ReImg.fromCanvas(document.getElementById('canvas')).downloadPng("shabbat-times.png");
+}

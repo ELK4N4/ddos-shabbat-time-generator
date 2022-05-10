@@ -2,10 +2,110 @@
     font-family: "Assistant";
     src: url("Assistant.ttf") format("ttf"),
 }
-body, html {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
+
+#canvas {
+    display: none;
+}
+
+#download {
+    display: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+	width: 150px;
+	height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	background: red;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+	background: #e62222;
+    transform: translate(-50%, -50%) scale(2);
+}
+
+button, button span {
+	transition: 200ms;
+}
+
+button .text {
+	transform: translateX(35px);
+	color: white;
+	font-weight: bold;
+}
+
+button .icon {
+	position: absolute;
+	border-left: 1px solid #c41b1b;
+	transform: translateX(110px);
+	height: 40px;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+button svg {
+	width: 15px;
+	fill: #eee;
+}
+
+button:hover {
+	background: #ff3636;
+}
+
+button:hover .text {
+	color: transparent;
+}
+
+button:hover .icon {
+	width: 150px;
+	border-left: none;
+	transform: translateX(0);
+}
+
+button:focus {
+	outline: none;
+}
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 16px solid #d6d6d6;
+    border-radius: 50%;
+    border-top: 16px solid red;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: translate(-50%, -50%) rotate(0deg); }
+    100% { -webkit-transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
