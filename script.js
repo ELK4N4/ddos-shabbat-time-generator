@@ -69,8 +69,10 @@ window.onload = function() {
 
         var loader = document.getElementById("loader");
         var button = document.getElementById("download");
-        loader.style.display = 'none';
-        button.style.display = 'flex';
+        setTimeout(() => {
+            loader.style.display = 'none';
+            button.style.display = 'flex';
+        }, 500);
     }
 };
 
