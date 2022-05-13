@@ -6,8 +6,8 @@ window.onload = function() {
     img.src = './template.jpg';
     img.onload = async () => {
         ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "white";
-        ctx.font = "600 130px Assistant";
+        ctx.fillStyle = "#d5a64a";
+        ctx.font = "700 160px Assistant";
         
         var response;
         var json;
@@ -37,7 +37,7 @@ window.onload = function() {
         var haifaExist = json.items[2].title.split(" ")[1];
 
         var parashaWidth = ctx.measureText(parashaString).width;
-        ctx.fillText(parashaString , (canvas.width/2) - (parashaWidth / 2), 415);
+        ctx.fillText(parashaString , (canvas.width/2) - (parashaWidth / 2), 345);
 
         if (window.localStorage) {
             if (!localStorage.getItem('reload')) {
@@ -48,24 +48,25 @@ window.onload = function() {
             }
         }
         
+        ctx.fillStyle = "white";
         ctx.font = "700 95px Assistant";
         var jerusalemString = `${jerusalemExist}             ${jerusalemEnter}`;
         var jerusalemWidth = ctx.measureText(jerusalemString).width;
-        ctx.fillText(jerusalemString , (canvas.width/2) - (jerusalemWidth / 2) - 230, 710 + 140*0);
+        ctx.fillText(jerusalemString , (canvas.width/2) - (jerusalemWidth / 2) - 230, 730 + 140*0);
     
         var telavivString = `${telavivExist}             ${telavivEnter}`;
         var telavivWidth = ctx.measureText(telavivString).width;
-        ctx.fillText(telavivString , (canvas.width/2) - (telavivWidth / 2) - 230, 710 + 140*1);
+        ctx.fillText(telavivString , (canvas.width/2) - (telavivWidth / 2) - 230, 730 + 140*1);
 
 
         var beershevaString = `${beershevaExist}             ${beershevaEnter}`;
         var beershevaWidth = ctx.measureText(beershevaString).width;
-        ctx.fillText(beershevaString , (canvas.width/2) - (beershevaWidth / 2) - 230, 710 + 140*2);
+        ctx.fillText(beershevaString , (canvas.width/2) - (beershevaWidth / 2) - 230, 730 + 140*2);
 
 
         var haifaString = `${haifaExist}             ${haifaEnter}`;
         var haifaWidth = ctx.measureText(haifaString).width;
-        ctx.fillText(haifaString , (canvas.width/2) - (haifaWidth / 2) - 230, 710 + 140*3);
+        ctx.fillText(haifaString , (canvas.width/2) - (haifaWidth / 2) - 230, 730 + 140*3);
 
         var loader = document.getElementById("loader");
         var button = document.getElementById("download");
